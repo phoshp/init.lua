@@ -55,14 +55,6 @@ local plugins = {
     "tpope/vim-fugitive",
     "jiangmiao/auto-pairs",
     {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        init = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end
-    },
-    {
         'VonHeikemen/fine-cmdline.nvim',
         dependencies = {
             { 'MunifTanjim/nui.nvim' }
@@ -73,7 +65,17 @@ local plugins = {
         "iamcco/markdown-preview.nvim",
         build = "cd app && yarn install"
     },
-    { 'akinsho/toggleterm.nvim', version = "*",     config = true }
+    { 'akinsho/toggleterm.nvim', version = "*",     config = true },
+    {
+        "folke/which-key.nvim",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        config = function()
+            require("which-key").setup {}
+        end
+    },
 }
 
 require("lazy").setup(plugins, {})

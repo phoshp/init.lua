@@ -31,8 +31,6 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
-vim.opt.updatetime = 50
-
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { desc = "No Highlight" })
 vim.keymap.set("n", "<leader>s", ":w!<CR>", { desc = "Save File" })
 vim.keymap.set("n", "<leader>q", ":q!<CR>", { desc = "Quit" })
