@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     "folke/lazy.nvim",
     "ellisonleao/gruvbox.nvim",
-    { 'rose-pine/neovim',        name = 'rose-pine' },
+    { 'rose-pine/neovim', name = 'rose-pine' },
     "nvim-tree/nvim-web-devicons",
     {
         'glepnir/dashboard-nvim',
@@ -76,6 +76,12 @@ local plugins = {
             require("which-key").setup {}
         end
     },
+    {
+        "numToStr/Comment.nvim",
+        config = function ()
+            require("Comment").setup {}
+        end
+    }
 }
 
 require("lazy").setup(plugins, {})
