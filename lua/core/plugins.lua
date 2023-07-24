@@ -21,7 +21,10 @@ local plugins = {
         event = 'VimEnter',
     },
     "nvim-tree/nvim-tree.lua",
-    "nvim-lualine/lualine.nvim",
+    {
+        "nvim-lualine/lualine.nvim",
+        event = "VeryLazy"
+    },
     "nvim-treesitter/nvim-treesitter",
     {
         "VonHeikemen/lsp-zero.nvim",
@@ -81,7 +84,8 @@ local plugins = {
         config = function ()
             require("Comment").setup {}
         end
-    }
+    },
+    'tikhomirov/vim-glsl'
 }
 
 require("lazy").setup(plugins, {})
