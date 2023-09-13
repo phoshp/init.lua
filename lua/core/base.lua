@@ -8,8 +8,7 @@ vim.opt.termguicolors = true
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
-vim.opt.relativenumber = true
-vim.opt.showmode = false
+--vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -32,9 +31,12 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
+vim.opt.updatetime = 50
+
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { desc = "No Highlight" })
-vim.keymap.set("n", "<leader>s", ":w!<CR>", { desc = "Save File" })
+vim.keymap.set("n", "<leader>s", ":w<CR>", { desc = "Save File" })
 vim.keymap.set("n", "<leader>q", ":q!<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<Tab>", ":bprev<CR>", { desc = "Prev Buffer" })
 vim.keymap.set("n", "<S-Tab>", ":bnext<CR>", { desc = "Next Buffer" })
-vim.keymap.set("n", "<C-q>", ":bd!<CR>", { desc = "Close Buffer" })
+vim.keymap.set("n", "<C-q>", ":bd!<CR>")
+vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true, nowait = false})

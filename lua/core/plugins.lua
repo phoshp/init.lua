@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     "folke/lazy.nvim",
     "ellisonleao/gruvbox.nvim",
-    { 'rose-pine/neovim', name = 'rose-pine' },
+    { 'rose-pine/neovim',        name = 'rose-pine' },
     "nvim-tree/nvim-web-devicons",
     {
         'glepnir/dashboard-nvim',
@@ -56,7 +56,11 @@ local plugins = {
     "folke/trouble.nvim",
     "lewis6991/gitsigns.nvim",
     "tpope/vim-fugitive",
-    "jiangmiao/auto-pairs",
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {},
+    },
     {
         'VonHeikemen/fine-cmdline.nvim',
         dependencies = {
@@ -68,7 +72,6 @@ local plugins = {
         "iamcco/markdown-preview.nvim",
         build = "cd app && yarn install"
     },
-    { 'akinsho/toggleterm.nvim', version = "*",     config = true },
     {
         "folke/which-key.nvim",
         init = function()
@@ -81,11 +84,13 @@ local plugins = {
     },
     {
         "numToStr/Comment.nvim",
-        config = function ()
+        config = function()
             require("Comment").setup {}
         end
     },
-    'tikhomirov/vim-glsl'
+    'tikhomirov/vim-glsl',
+    "gpanders/nvim-parinfer",
+    "elkowar/yuck.vim"
 }
 
 require("lazy").setup(plugins, {})
