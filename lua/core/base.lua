@@ -8,6 +8,7 @@ vim.opt.termguicolors = true
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
+vim.opt.showmode = false
 --vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
