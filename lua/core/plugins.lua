@@ -14,7 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     "folke/lazy.nvim",
     "ellisonleao/gruvbox.nvim",
-    { 'rose-pine/neovim',        name = 'rose-pine' },
+    { 'rose-pine/neovim',        name = 'rose-pine', opts = {
+    dim_nc_background = true,
+    disable_background = true,
+    disable_float_background = true,
+    } },
     "nvim-tree/nvim-web-devicons",
     {
         'glepnir/dashboard-nvim',

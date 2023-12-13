@@ -1,5 +1,11 @@
+require('rose-pine').setup {
+    dim_nc_background = true,
+    disable_background = true,
+    disable_float_background = true,
+}
+
 vim.cmd("colorscheme rose-pine")
-vim.notify = require("notify")
+-- vim.notify = require("notify")
 
 require'dashboard'.setup({
     theme = 'hyper',

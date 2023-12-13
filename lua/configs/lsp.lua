@@ -2,15 +2,6 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-    'tsserver',
-    'rust_analyzer',
-    'lua_ls',
-    'clangd'
-})
-
-lsp.nvim_workspace()
-
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -21,8 +12,26 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 })
 
 cmp.setup {
-    mapping = cmp_mappings
+    sources = {
+    {name = 'path'},
+    {name = 'nvim_lsp'},
+    {name = 'nvim_lua'},
+  },
+  formatting = lsp.cmp_format(),
+  mapping = cmp_mappings
 }
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {'tsserver', 'rust_analyzer'},
+  handlers = {
+    lsp.default_setup,
+    lua_ls = function()
+      local lua_opts = lsp.nvim_lua_ls()
+      require('lspconfig').lua_ls.setup(lua_opts)
+    end,
+  }
+})
 
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
@@ -46,7 +55,7 @@ lsp.on_attach(function(client, bufnr)
     end, opts)
 end)
 
-lsp.setup()
+-- lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true
