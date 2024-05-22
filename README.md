@@ -1,7 +1,3 @@
-# my minimal init.lua
+# Super powerful IDE-destroyer neovim config
 
-|![Home](./images/dash.png)|
-| ------------------------ |
-|![lua](./images/lua.png)|
-|![rust](./images/rust.png)|
-
+joke on you, its simple as shit.

@@ -14,11 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     "folke/lazy.nvim",
     "ellisonleao/gruvbox.nvim",
-    { 'rose-pine/neovim',        name = 'rose-pine', opts = {
-    dim_nc_background = true,
-    disable_background = true,
-    disable_float_background = true,
-    } },
+    "Shatur/neovim-ayu",
+    {
+        'rose-pine/neovim',
+        name = 'rose-pine',
+    },
     "nvim-tree/nvim-web-devicons",
     {
         'glepnir/dashboard-nvim',
@@ -29,7 +29,7 @@ local plugins = {
         "nvim-lualine/lualine.nvim",
         event = "VeryLazy"
     },
-    "nvim-treesitter/nvim-treesitter",
+   "nvim-treesitter/nvim-treesitter",
     {
         "VonHeikemen/lsp-zero.nvim",
         dependencies = {
@@ -48,7 +48,6 @@ local plugins = {
             'rafamadriz/friendly-snippets'
         }
     },
-
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
@@ -64,12 +63,6 @@ local plugins = {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
         opts = {},
-    },
-    {
-        'VonHeikemen/fine-cmdline.nvim',
-        dependencies = {
-            { 'MunifTanjim/nui.nvim' }
-        }
     },
     'rcarriga/nvim-notify',
     {
@@ -94,7 +87,8 @@ local plugins = {
     },
     'tikhomirov/vim-glsl',
     "gpanders/nvim-parinfer",
-    "elkowar/yuck.vim"
+    "elkowar/yuck.vim",
+    "windwp/nvim-ts-autotag",
 }
 
 require("lazy").setup(plugins, {})
