@@ -40,5 +40,6 @@ vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Next Buffer" })
 vim.keymap.set("n", "<S-Tab>", ":bprev<CR>", { desc = "Prev Buffer" })
 vim.keymap.set("n", "<C-q>", ":bd!<CR>", { desc = "Close Buffer" })
 vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true, nowait = false})
+vim.keymap.set("n", "<leader>.", ":edit ~/.config/nvim<CR>", { desc = "Edit config" })
 
 vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }

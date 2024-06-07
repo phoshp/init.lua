@@ -24,12 +24,11 @@ local plugins = {
         'glepnir/dashboard-nvim',
         event = 'VimEnter',
     },
-    "nvim-tree/nvim-tree.lua",
     {
         "nvim-lualine/lualine.nvim",
         event = "VeryLazy"
     },
-   "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter",
     {
         "VonHeikemen/lsp-zero.nvim",
         dependencies = {
@@ -89,6 +88,11 @@ local plugins = {
     "gpanders/nvim-parinfer",
     "elkowar/yuck.vim",
     "windwp/nvim-ts-autotag",
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    }
 }
 
 require("lazy").setup(plugins, {})
