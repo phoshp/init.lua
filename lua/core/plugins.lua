@@ -89,9 +89,12 @@ local plugins = {
     "elkowar/yuck.vim",
     "windwp/nvim-ts-autotag",
     {
-        'stevearc/oil.nvim',
-        opts = {},
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        'simonmclean/triptych.nvim',
+        event = 'VeryLazy',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons',
+        }
     }
 }
 

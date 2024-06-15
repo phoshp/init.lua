@@ -1,7 +1,7 @@
 require("configs.theme")
 require("configs.line")
-require("configs.filetree")
 require("configs.lsp")
 require("configs.treesitter")
 require("configs.telescope")
 require("configs.git")
+require("configs.file")
