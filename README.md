@@ -1,3 +1,3 @@
-# Super powerful IDE-destroyer neovim config
+# My minimal neovim config
 
-joke on you, its simple as shit.
+easy keybindings, pure, minimal, ++

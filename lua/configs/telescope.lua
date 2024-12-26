@@ -9,7 +9,7 @@ vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = "Buffers" })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Help tags" })
 vim.keymap.set('n', '<leader>ft', builtin.colorscheme, { desc = "Theme" })
 
-local trouble = require("trouble.providers.telescope")
+local trouble = require("trouble.sources.telescope")
 telescope.setup {
     defaults = {
         mappings = {

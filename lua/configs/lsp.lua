@@ -2,11 +2,9 @@ require('nvim-ts-autotag').setup()
 
 local lsp = require("lsp-zero")
 
-lsp.preset("recommended")
-
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
+local cmp_mappings = cmp.mapping.preset.insert({
     ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
     ['<Enter>'] = cmp.mapping.confirm({ select = true }),
@@ -62,8 +60,6 @@ lsp.on_attach(function(_, bufnr)
         vim.lsp.buf.format { async = true }
     end, { desc = "Format file", buffer = bufnr })
 end)
-
--- lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true
