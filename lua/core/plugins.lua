@@ -95,7 +95,7 @@ local plugins = {
             'nvim-lua/plenary.nvim',
             'nvim-tree/nvim-web-devicons',
         }
-    }
+    },
 }
 
 require("lazy").setup(plugins, {})
