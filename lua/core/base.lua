@@ -31,7 +31,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
-vim.opt.background = "dark"
+vim.opt.background = "light"
 
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { desc = "No Highlight" })
 vim.keymap.set("n", "<leader>s", ":w<CR>", { desc = "Save File" })

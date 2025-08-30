@@ -13,7 +13,17 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     "folke/lazy.nvim",
-    "ellisonleao/gruvbox.nvim",
+    {
+        "zenbones-theme/zenbones.nvim",
+        dependencies = "rktjmp/lush.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.g.zenbones_darken_comments = 45
+            vim.g.background = 'light'
+            vim.cmd.colorscheme('zenbones')
+        end
+    },
     "Shatur/neovim-ayu",
     {
         'rose-pine/neovim',
